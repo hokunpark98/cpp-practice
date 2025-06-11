@@ -10,20 +10,17 @@ int main()
 
     if (is_valid)
     {
-        int day = V / (A - B);
-        int remain = V % (A - B);
+        int remain = V;
+        int result = 1;
 
-        if (remain != 0)
-        {
-            day++;
+        remain -= A;
+        if (remain != 0){
+            result += remain / (A-B);
+            if(remain % (A-B) != 0)
+                result += 1;
         }
 
-        remain = remain - A + B;
-
-        if(remain <= A)
-            day--;
-
-        std::cout << day << '\n';
+        std::cout << result << '\n';
     }
 
     return 0;
