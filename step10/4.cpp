@@ -1,32 +1,15 @@
 #include <iostream>
-#include <vector>
-#include <utility>
-#include <string>
 
 int main()
 {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(NULL);
+    int n;
+    std::cin >> n;
 
-    int N;
-    std::vector<std::pair<int, int>> pairs;
-
-    std::cin >> N;
-    
-    for (int i = 0; i < N; i++)
+    if (n >= 1 && n <= 1'000'000'000)
     {
-        int A, B;
-        std::cin >> A >> B;
-        pairs.emplace_back(A, B);
+        long long result = static_cast<long long>(n) * 4;
+        std::cout << result << '\n';
     }
-
-    
-    std::string str = "";    
-    for (const auto& pair : pairs)
-    {
-        str += std::to_string(pair.first + pair.second) + '\n';
-    }
-    std::cout << str << '\n';
 
     return 0;
 }
